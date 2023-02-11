@@ -11,8 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      {!login_status && <Login/>}
-      {login_status && <Dashboard />}
+      {login_status && <Login/>}
+      {!login_status && <Dashboard />}
     </div>
   )
 }
