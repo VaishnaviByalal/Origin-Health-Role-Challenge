@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { UserState } from "../store/reducer";
 import DashboardPage from "./DashboardPage";
 import "./dashboard.css";
+import AdminDashboardPage from "./AdminDashboardPage";
 
 const Dashboard = () => {
   const admin_status = useSelector<UserState, boolean>(
@@ -17,14 +18,18 @@ const Dashboard = () => {
   return (
     <div>
       <div className={"navbar"}>
-        <text className={"navbar-text"}>Welcome User</text>
+        <span className={"medium-text bold-text"}>Welcome User</span>
         <button onClick={handleLogout} className={"logout-button"}>
           Logout
         </button>
       </div>
       <div className={"dashboard-page"}>
-        <DashboardPage />
-        {admin_status && <>Hello Admin</>}
+        <div>
+          {admin_status && <AdminDashboardPage />}
+        </div>
+        <div>
+          <DashboardPage />
+        </div>
       </div>
     </div>
   );

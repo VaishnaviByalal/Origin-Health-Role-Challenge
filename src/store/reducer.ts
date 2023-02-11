@@ -10,8 +10,8 @@ export interface UserState {
 }
 
 export const initialState:UserState = {
-    login_status : false,
-    admin: false,
+    login_status : true,
+    admin: true,
     image_array: imageArray.map( img => {
         return {source:img,id:nanoid(),label:''}
     }),
@@ -24,7 +24,7 @@ export interface ImageTypes {
     label: string;
 }
 
-type Action = { type: string,login_status: boolean,login_details: LoginCreds,image_details: ImageTypes}
+type Action = { type: string,login_status: boolean,login_details: LoginCreds,image_details: ImageTypes,label: string}
 
 export const userReducer =  (state:UserState = initialState ,action : Action ) => {
     console.log(state)
@@ -53,6 +53,10 @@ export const userReducer =  (state:UserState = initialState ,action : Action ) =
         case "REMOVE_LABEL" : {
             const newImageArray=state.image_array.map( (img)=> img.id===action.image_details.id ? { ...img, label:'' }: img )
             return {...state,image_array:newImageArray}
+        }
+        case "ADD_LABEL" : {
+            state.labels.push(action.label)
+            return {...state}
         }
         default : return {...state}
     }

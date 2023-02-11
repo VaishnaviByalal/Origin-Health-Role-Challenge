@@ -10,8 +10,8 @@ const DashboardPage = () => {
         (state: UserState) => state.image_array);
 
     return(
-        <div >
-            Dashboard
+        <div className="user-page">
+            <span className="big-text bold-text">User Dashboard</span>
             <div className="images_display">
                 {image_array && image_array.map( (img) => {
                     return <Image source={img.source} id={img.id} label={img.label} key={img.id}/>

@@ -74,3 +74,55 @@
 .select-option {
   display: flex;
 }
+
+.bold-text {
+  font-weight: 600;
+}
+
+.big-text {
+  font-size: 32px;
+}
+
+.medium-text {
+  font-size: 20px;
+}
+
+.navbar {
+  justify-content: space-between;
+}
+
+.labels-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.admin-page {
+  min-width: 250px;
+  min-height: 400px;
+  background-color: white;
+  color: black;
+  border-radius: 8px;
+}
+
+.user-page {
+  padding-left: 50px;
+}
+
+.new-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-label-button {
+  width: 80px;
+}
+
+.add-label-input {
+  height: 30px;
+}
