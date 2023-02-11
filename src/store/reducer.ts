@@ -1,26 +1,26 @@
 import {nanoid} from 'nanoid';
 import { LoginCreds } from '../Login/Login';
+import { imageArray } from './imagePaths';
 
 export interface UserState {
     login_status: boolean;
     admin: boolean;
+    image_array: ImageTypes[];
 }
 
 export const initialState:UserState = {
     login_status : false,
     admin: false,
+    image_array: imageArray.map( img => {
+        return {source:img,id:nanoid(),label:''}
+    })
 }
 
-// export interface obj{
-//     id : string
-//     name : string 
-//     price : number
-//     discount : number
-//     discount_perc : number
-//     rating : number
-//     src : string
-//     quantity : number
-// }
+export interface ImageTypes {
+    source: string;
+    id: string;
+    label: string;
+}
 
 type Action = { type: string,login_status: boolean,login_details: LoginCreds}
 

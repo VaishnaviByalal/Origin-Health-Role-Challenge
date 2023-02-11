@@ -1,0 +1,13 @@
+.navbar {
+    display: flex;
+    min-width: 100vh;
+}
+
+.navbar-text {
+
+}
+
+.logout-button {
+    display: flex;
+    justify-content: end;
+}
