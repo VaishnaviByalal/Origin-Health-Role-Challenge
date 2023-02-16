@@ -15,13 +15,13 @@ const Image = ({source,id,label}:Props) => {
 
     const [openlabel,setOpenlabel] = useState<boolean>(false);
     const [value, setValue] = useState<string>('');
+    const dispatch = useDispatch();
 
     const handleOpenLabel = () => {
         setOpenlabel(true)
         dispatch({ type: "CHANGE_LABEL" , image_details : {label:label_array[0],id,source}});
     }
 
-    const dispatch = useDispatch();
     
     const handleCloseLabel = () => {
         setOpenlabel(false)

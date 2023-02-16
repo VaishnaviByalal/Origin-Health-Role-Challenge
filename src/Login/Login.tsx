@@ -24,16 +24,16 @@ const Login = () => {
 
     return(
         <div>
-            Login Page
+            <h2>Login Page</h2>
             <div>
-                <text>Username</text>
+                <span>Username : </span>
                 <input 
                     value={loginDetails.username}
                     onChange={(e)=>setLoginDetails({...loginDetails,username: e.target.value})}
                 />
             </div>
             <div>
-                <text>Password</text>
+                <span>Password  : </span>
                 <input 
                     value={loginDetails.password}
                     onChange={(e)=>setLoginDetails({...loginDetails,password: e.target.value})}

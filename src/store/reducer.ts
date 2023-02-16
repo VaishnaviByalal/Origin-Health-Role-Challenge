@@ -10,8 +10,8 @@ export interface UserState {
 }
 
 export const initialState:UserState = {
-    login_status : true,
-    admin: true,
+    login_status : false,
+    admin: false,
     image_array: imageArray.map( img => {
         return {source:img,id:nanoid(),label:''}
     }),
