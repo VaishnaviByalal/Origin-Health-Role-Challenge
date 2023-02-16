@@ -13,7 +13,7 @@ const Image = ({source,id,label}:Props) => {
     const label_array = useSelector<UserState, string[]>(
         (state: UserState) => state.labels);
 
-    const [openlabel,setOpenlabel] = useState<boolean>(false);
+    const [openlabel,setOpenlabel] = useState<boolean>(label!=='');
     const [value, setValue] = useState<string>('');
     const dispatch = useDispatch();
 
