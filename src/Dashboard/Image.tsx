@@ -14,7 +14,7 @@ const Image = ({source,id,label}:Props) => {
         (state: UserState) => state.labels);
 
     const [openlabel,setOpenlabel] = useState<boolean>(label!=='');
-    const [value, setValue] = useState<string>('');
+    const [value, setValue] = useState<string>(label);
     const dispatch = useDispatch();
 
     const handleOpenLabel = () => {
